@@ -1,2 +1,2 @@
 # PARTIES
-Scripts and code for PARTIES (ASPLOS'19)
+This repo includes the instructions to set up the latency-critical applications and the PARTIES resource controller used in the PARTIES paper published in ASPLOS 2019. If you use this software in your research, we request that you reference the PARTIES paper (PARTIES: QoS-Aware Resrouce Partitioning for Multiple Interactive Services, Shuang Chen, Christina Delimitrou, José F. Martínez, ASPLOS 2019). 

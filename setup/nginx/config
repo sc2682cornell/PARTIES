@@ -1,0 +1,25 @@
+# Template used to create this container: /usr/share/lxc/templates/lxc-ubuntu
+# Parameters passed to the template:
+# Template script checksum (SHA-1): 704a37e3ce689db94dd1c1a02eae680a00cb5a82
+# For additional config options, please look at lxc.container.conf(5)
+
+# Uncomment the following line to support nesting containers:
+#lxc.include = /usr/share/lxc/config/nesting.conf
+# (Be aware this has security implications)
+lxc.aa_allow_incomplete=1
+
+# Common configuration
+lxc.include = /usr/share/lxc/config/ubuntu.common.conf
+
+# Container specific configuration
+lxc.rootfs = /filer01/lxc-containers/shuang_nginx/rootfs
+lxc.mount.entry=/filer01/datasets /filer01/lxc-containers/shuang_nginx/rootfs/home none bind 0 0
+lxc.rootfs.backend = dir
+lxc.utsname = shuang_nginx
+lxc.arch = amd64
+
+# Network configuration
+lxc.network.type = veth
+lxc.network.link = lxcbr0
+lxc.network.flags = up
+lxc.network.hwaddr = 00:16:3e:eb:1b:3c
