@@ -1,3 +1,0 @@
-To generate random html files as NGINX's dataset, run the following command in bash (the example generates 800 160B files):
-
-for n in 160; do mkdir -p $n && for i in {0..800}; do perl gen_html.pl $n > $n/$i.html; done; done

@@ -1,0 +1,1 @@
+Other than Memcached, NGINX and MongoDB, three out of the six apps (i.e., Xapian, Moses, Sphinx) evaluated in PARTIES are obtained from Tailbench (http://tailbench.csail.mit.edu).
