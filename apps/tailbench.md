@@ -1,0 +1,3 @@
+Other than Memcached, NGINX and MongoDB, three out of the six apps (i.e., Xapian, Moses, Sphinx) evaluated in PARTIES are obtained from [Tailbench](http://tailbench.csail.mit.edu), which includes both the server applications and the clients (open-loop load generators). We use the networked version of Tailbench. 
+
+Despite only evaluating only 3 out of the 8 Tailbench applications, we also successfully deployed all the Tailbench applications except for specjbb. Since Specjbb is not free software (it is part of the SPEC benchmark suite which is not free), the Tailbench directory only includes the wrapper of specjbb, without the actual logic of specjbb.
