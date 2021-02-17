@@ -9,16 +9,16 @@ import threading
 #sys.path.append('/home/sc2682/scripts/monitor')
 #from monitorN import startMonitoring, endMonitoring
 import subprocess
-#CONFIG = '/home/sc2682/scripts/colocation/Hephaestus/config/config.txt'
-CONFIG = '/home/sc2682/scripts/manage/config.txt'
+
+CONFIG = '/home/sc2682/scripts/manage/config.txt' # default path to the input config.txt file
 if (len(sys.argv) > 1):
     CONFIG = sys.argv[1]
 
+# QoS target of each application, in nanoseconds.
 QOS = {"moses": 15000000, "xapian": 5000000, "nginx": 10000000, "sphinx": 2500000000, "memcached": 600000, "mongodb": 300000000}
 
 INTERVAL  = 0.1  # Frequency of monitoring, unit is second
-#TIMELIMIT = 55
-TIMELIMIT = 200   # How long to run this controller, unit is in second. Default is forever
+TIMELIMIT = 200   # How long to run this controller, unit is in second. 
 REST      = 100
 NUM       = 0    # Number of colocated applications
 APP       = [None for i in xrange(10)] # Application names
@@ -77,21 +77,6 @@ def init():
             WAY[i]   = 20/NUM
             MLat[i]  = collections.deque(maxlen=(int(1.0/INTERVAL)))
 # Initialize resource parititioning
-
-#    WAY[1] = 12
-#    WAY[2] = 4
-#    WAY[3] = 4
-#    EWAY = 0
-#    FREQ[1] = 2300 
-#    FREQ[2] = 2100
-#    FREQ[3] = 1700
-#    for i in xrange(8):
-#        CORES[1].append(ECORES.pop())
-#    for i in xrange(4):
-#        CORES[2].append(ECORES.pop())
-#    for i in xrange(2):
-#        CORES[3].append(ECORES.pop())
-
     j = 0
     while len(ECORES) > 0:
         CORES[j+1].append(ECORES.pop())
