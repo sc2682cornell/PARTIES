@@ -55,7 +55,7 @@ TOLERANCE = 5                          # Check these times of latency whenver an
 def init():
     global EWAY, MLat, TIMELIMIT, CONFIG, NUM, APP, QoS, Lat, Slack, ECORES, CORES, FREQ, WAY, CPU, MEM, INTERVAL
     if len(sys.argv) > 2: 
-        TIMELIMIT = int(sys.argv[
+        TIMELIMIT = int(sys.argv[2])
 # Read the name of colocated applications and their QoS target (may be in different units)
     print "initialize!"
     if os.path.isfile('%s' % CONFIG) == False:
